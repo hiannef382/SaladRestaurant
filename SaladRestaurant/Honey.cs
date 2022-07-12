@@ -6,21 +6,17 @@ namespace SaladRestaurant
 {
     public class Honey:Sauces
     {
-        public Honey(ISalad salad):base(salad)
-        {
-         
-        }
-        public string doSalad()
-        {
-            string type = aSalad.doSalad();
-            return type + addHoney();
-        }
-        private string addHoney()
-        {
-            return "+Honey";
-        }
-
+        Salad baseSalad = null;
+        protected double p_Price = 0.0;
         
+        public Honey(Salad objSalad)
+        {
+            baseSalad = objSalad;
+        }      
+        public override double  GetPrice()
+        {
+            return p_Price + baseSalad.GetPrice();
+        }
 
     }
 }

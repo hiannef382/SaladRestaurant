@@ -6,18 +6,17 @@ namespace SaladRestaurant
 {
     public class Tahini:Sauces
     {
-        public Tahini(ISalad salad) : base(salad)
+        Salad baseSalad = null;
+        protected double p_Price = 0.0;
+        
+        protected Sauces(Salad objSalad)
+        {
+            baseSalad = objSalad;
+        }      
+        public override double  GetPrice()
         {
 
-        }
-        public string doSalad()
-        {
-            string type = aSalad.doSalad();
-            return type + addTahini();
-        }
-        private string addTahini()
-        {
-            return "+Tahini";
+        return p_Price + baseSalad.GetPrice();
         }
     }
 }

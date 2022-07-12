@@ -4,16 +4,12 @@ using System.Text;
 
 namespace SaladRestaurant
 {
-    public class GreekSalad: Salad, ISalad
+    public class GreekSalad: Salad
     {
-        public string doSalad()
+        private double GS_Price = 250.0;
+        public override double GetPrice()
         {
-            return "GreekSalad";
-        }
-        public GreekSalad()
-        {
-            this.myPrice = 40.00;
-            this.description = "GreekSalad";
+            return GS_Price;
         }
     }
 }

@@ -4,24 +4,19 @@ using System.Text;
 
 namespace SaladRestaurant
 {
-    public abstract class Sauces:ISalad
+    public abstract class Sauces:Salad
     {
-        protected ISalad aSalad;
-
-        public Sauces(ISalad salad)
+        Salad baseSalad = null;
+        protected double p_Price = 0.0;
+        
+        protected Sauces(Salad objSalad)
         {
-            aSalad = salad;
-        }
-
-
-        public ISalad getSalad()
+            baseSalad = objSalad;
+        }      
+        public override double  GetPrice()
         {
-            return aSalad;
-        }
 
-        public void setSalad(ISalad aSalad)
-        {
-            this.aSalad = aSalad;
+        return p_Price + baseSalad.GetPrice();
         }
     }
 }

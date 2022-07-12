@@ -4,16 +4,12 @@ using System.Text;
 
 namespace SaladRestaurant
 {
-    public class HealthyTacoSalad: Salad, ISalad
+    public class HealthyTacoSalad: Salad
     {
-        public string doSalad()
+        private double GS_Price = 351.5;
+        public override double GetPrice()
         {
-            return "HealthyTacoSalad";
-        }
-        public HealthyTacoSalad()
-        {
-            this.myPrice = 45.00;
-            this.description = "HealthyTacoSalad";
+            return GS_Price;
         }
     }
 }
